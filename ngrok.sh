@@ -1,11 +1,20 @@
 rm -rf ngrok ngrok.zip ngrok.sh > /dev/null 2>&1
-wget -O ng.sh https://bit.ly/GCngrok > /dev/null 2>&1
-chmod +x ng.sh
-./ng.sh
+rm -rf ngrok ngrok.zip ng.sh > /dev/null 2>&1
+
+echo "======================="
+echo "Download ngrok"
+echo "======================="
+
+wget -O ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
+unzip ngrok.zip > /dev/null 2>&1
+./ngrok config add-authtoken "2H2bm5920tVI1B78PUvsAHdgjOQ_5yGs1VWW3bD9PzTh2iwuU"
+./ngrok authtoken "2H2bm5920tVI1B78PUvsAHdgjOQ_5yGs1VWW3bD9PzTh2iwuU"
 clear
+
 echo "======================="
 echo choose ngrok region
 echo "======================="
+
 echo "us - United States (Ohio)"
 echo "eu - Europe (Frankfurt)"
 echo "ap - Asia/Pacific (Singapore)"
